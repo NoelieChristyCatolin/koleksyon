@@ -9,14 +9,12 @@ class SplashAPI{
 
   Future<List<SplashImage>> searchImage(String key) async {
     final url = "$baseURL/search/photos?page=1&query=$key&$clientId";
-    print(url);
 
     final response = await httpClient.get(url);
     if (response.statusCode == 200){
       Map<String, dynamic> json = jsonDecode(response.body);
       var results = json['results'] as List;
       List<SplashImage> imageList = results.map((i) => SplashImage.fromJson(i)).toList();
-      print(imageList.length);
       return imageList;
     }
     else {

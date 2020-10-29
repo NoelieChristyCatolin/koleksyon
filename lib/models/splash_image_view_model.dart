@@ -7,7 +7,7 @@ class SplashImageViewModel {
   List<SplashImage> imageLinks = [];
 
   Future<List<SplashImage>> searchImage(String key) async{
-    var result = await api.searchImage("office");
+    var result = await api.searchImage(key);
     return result;
   }
 

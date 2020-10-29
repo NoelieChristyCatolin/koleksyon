@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/koleksyon_view.dart';
+import 'screens/koleksyon.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: KoleksyonView("Koleksyon"),
+      home: Koleksyon("Koleksyon"),
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AddCollection extends StatefulWidget {
+class CreateCollection extends StatefulWidget {
+
   @override
-  _AddCollectionState createState() => _AddCollectionState();
+  _CreateCollectionState createState() => _CreateCollectionState();
 }
 
-class _AddCollectionState extends State<AddCollection> {
+class _CreateCollectionState extends State<CreateCollection> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -34,12 +35,9 @@ class _AddCollectionState extends State<AddCollection> {
   }
 
   String _isNotNull(String value) {
-    print("value.length ${value.length} ");
     if (value.length == 0) {
-      print("zero");
       return 'Field Required';
     }
-    print("value");
     return null;
   }
 }

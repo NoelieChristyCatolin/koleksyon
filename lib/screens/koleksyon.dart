@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/screens/search_view.dart';
-import 'package:koleksyon/screens/collection_view.dart';
-import 'package:koleksyon/components/collection_list.dart';
+import 'package:koleksyon/screens/collections_view.dart';
+//import 'package:koleksyon/components/collection_list.dart';
 
 
 class Koleksyon extends StatefulWidget {
-  String title;
-
-  Koleksyon(this.title);
+  static String id = "koleksyon";
+  String title= "koleksyon";
+//  Koleksyon(this.title);
 
   @override
   _KoleksyonState createState() => _KoleksyonState();
@@ -19,7 +19,7 @@ class _KoleksyonState extends State<Koleksyon> {
 
   static List<Widget> _widgetOptions = <Widget>[
     SearchView(),
-    CollectionView(),
+    CollectionsView(),
   ];
 
   @override

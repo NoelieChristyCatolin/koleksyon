@@ -5,7 +5,7 @@ import 'package:koleksyon/models/collection_view_model.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
 import 'package:koleksyon/models/splash_image.dart';
 import 'package:koleksyon/components/splash_image_tile.dart';
-import '../components/collection_list.dart';
+//import '../components/collection_list.dart';
 
 class SearchView extends StatefulWidget {
   @override

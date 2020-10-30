@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_image.dart';
-import 'package:koleksyon/components/collection_list.dart';
-import 'package:koleksyon/screens/add_collection.dart';
+import 'package:koleksyon/screens/add_to_collection_view.dart';
 
 class SplashImageTile extends StatelessWidget {
  SplashImage splashImage = SplashImage();
@@ -21,25 +20,7 @@ class SplashImageTile extends StatelessWidget {
         showDialog(
             context:  context,
             builder: (context){
-              return SimpleDialog(
-                title: Text('Add to collection'),
-                children: <Widget>[
-                  CollectionList(),
-                  FlatButton.icon(
-                      onPressed: (){
-                        Navigator.pop(context);
-                        showDialog(
-                            context: context,
-                            builder: (context){
-                              return AddCollection();
-                            }
-                        );
-                      },
-                      icon: Icon(Icons.add),
-                      label: Text("New Collection")
-                  ),
-                ],
-              );
+              return AddToCollectionView(splashImage);
             }
         );
       },

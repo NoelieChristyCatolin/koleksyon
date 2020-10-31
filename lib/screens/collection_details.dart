@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_collection.dart';
 import 'package:provider/provider.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
+import 'add_to_collection_view.dart';
 
 class CollectionDetails extends StatefulWidget {
   static String id = "collectionDetails";
@@ -35,7 +36,15 @@ class _CollectionDetailsState extends State<CollectionDetails> {
                     Provider.of<SplashImageViewModel>(context, listen: false).deleteCollectionImage(widget.splashCollectionIndex, index);
                   },
                 ),
-                title: Image.network(collection.splashImages[index]),
+                title: Image.network(collection.splashImages[index].url),
+                onLongPress: (){
+                  showDialog(
+                      context:  context,
+                      builder: (context){
+                        return AddToCollectionView(collection.splashImages[index]);
+                      }
+                  ).then((value) => true ? Provider.of<SplashImageViewModel>(context, listen: false).deleteCollectionImage(widget.splashCollectionIndex, index) : null);
+                },
               );
             },
             itemCount: Provider.of<SplashImageViewModel>(context, listen: true).collections[widget.splashCollectionIndex].splashImages.length),

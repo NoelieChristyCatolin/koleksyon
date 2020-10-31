@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 class AddToCollectionView extends StatelessWidget {
   SplashImage splashImage;
+
   AddToCollectionView(this.splashImage);
 
   @override
@@ -26,7 +27,7 @@ class AddToCollectionView extends StatelessWidget {
                   title: Text(collection.name),
                   onTap: (){
                     Provider.of<SplashImageViewModel>(context, listen: false).addToCollection(index, splashImage);
-                    Navigator.pop(context);
+                    Navigator.pop(context, true);
                   },
                 );
               },

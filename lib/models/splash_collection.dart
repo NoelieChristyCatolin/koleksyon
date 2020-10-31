@@ -1,7 +1,8 @@
+import 'splash_image.dart';
 
 class SplashCollection{
   String name;
-  List<String> splashImages;
+  List<SplashImage> splashImages;
 
   SplashCollection({this.name, this.splashImages});
 }

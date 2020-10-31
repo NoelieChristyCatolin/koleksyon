@@ -7,7 +7,6 @@ import 'package:koleksyon/screens/collections_view.dart';
 class Koleksyon extends StatefulWidget {
   static String id = "koleksyon";
   String title= "koleksyon";
-//  Koleksyon(this.title);
 
   @override
   _KoleksyonState createState() => _KoleksyonState();
@@ -16,7 +15,6 @@ class Koleksyon extends StatefulWidget {
 class _KoleksyonState extends State<Koleksyon> {
 
   int _selectedIndex = 0;
-
   static List<Widget> _widgetOptions = <Widget>[
     SearchView(),
     CollectionsView(),

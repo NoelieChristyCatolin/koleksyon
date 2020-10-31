@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_image.dart';
 import 'package:koleksyon/models/splash_collection.dart';
-import 'package:koleksyon/models/collection_view_model.dart';
+import 'package:koleksyon/models/splash_image_view_model.dart';
 import 'package:koleksyon/components/loading.dart';
+import 'package:koleksyon/screens/collection_details.dart';
+import 'package:provider/provider.dart';
 import 'create_collection.dart';
 
 class CollectionsView extends StatefulWidget {
@@ -11,32 +13,44 @@ class CollectionsView extends StatefulWidget {
 }
 
 class _CollectionsViewState extends State<CollectionsView> {
-  CollectionViewModel collectionViewModel = CollectionViewModel();
+  SplashImageViewModel viewModel = SplashImageViewModel();
   SplashImage splashImage = SplashImage();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FutureBuilder<List<SplashCollection>>(
-            future: collectionViewModel.getCollections(),
-            builder: (context, snapshot){
-              return snapshot.hasData ? Container(
-                width: double.maxFinite,
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    separatorBuilder: (context, index) => Divider(color: Colors.black,),
-                    itemBuilder: (context, index){
-                      return ListTile(
-                        title: Text(snapshot.data[index].name),
-                        onTap: (){
-                        //todo: show collection
-                        },
+          Container(
+          width: double.maxFinite,
+            child: ListView.separated(
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => Divider(color: Colors.black,),
+                itemBuilder: (context, index){
+                SplashCollection collection = Provider.of<SplashImageViewModel>(context, listen: true).collections[index];
+                  return ListTile(
+                    trailing: IconButton(
+                      icon: Icon(Icons.close, color: Colors.red,),
+                      onPressed: (){
+                        Provider.of<SplashImageViewModel>(context, listen: false).deleteCollection(index);
+                      },
+                    ),
+                    title: Text(collection.name),
+                    onTap: (){
+                      Navigator.pushNamed(context, CollectionDetails.id, arguments: index);
+                    },
+                    onLongPress: () {
+                      print("onLongPress");
+                      showDialog(
+                        context: context,
+                        builder: (context){
+                          return CreateCollection(collection.name,index);
+                        }
                       );
                     },
-                    itemCount: snapshot.data.length),
-              ) : Loading();
-            }),
+                  );
+                },
+                itemCount: Provider.of<SplashImageViewModel>(context, listen: true).collections.length),
+        ),
         FlatButton.icon(
             onPressed: (){
               showDialog(

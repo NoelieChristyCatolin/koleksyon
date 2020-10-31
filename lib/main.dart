@@ -3,7 +3,6 @@ import 'package:koleksyon/models/splash_image_view_model.dart';
 import 'package:provider/provider.dart';
 import 'screens/koleksyon.dart';
 import 'screens/collection_details.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());

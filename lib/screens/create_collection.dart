@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
-import 'package:koleksyon/models/splash_image_view_model.dart';
 import 'package:provider/provider.dart';
 
 class CreateCollection extends StatefulWidget {

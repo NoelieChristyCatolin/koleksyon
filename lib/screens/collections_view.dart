@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_image.dart';
 import 'package:koleksyon/models/splash_collection.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
-import 'package:koleksyon/components/loading.dart';
 import 'package:koleksyon/screens/collection_details.dart';
 import 'package:provider/provider.dart';
 import 'create_collection.dart';

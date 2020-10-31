@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
-import 'collection_details.dart';
 import 'package:koleksyon/screens/create_collection.dart';
 import 'package:koleksyon/models/splash_image.dart';
 import 'package:koleksyon/models/splash_collection.dart';

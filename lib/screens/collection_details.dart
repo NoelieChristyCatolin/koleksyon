@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/models/splash_collection.dart';
-import 'package:provider/provider.dart';
 import 'package:koleksyon/models/splash_image_view_model.dart';
+import 'package:provider/provider.dart';
 import 'add_to_collection_view.dart';
 
 class CollectionDetails extends StatefulWidget {
@@ -43,7 +43,11 @@ class _CollectionDetailsState extends State<CollectionDetails> {
                       builder: (context){
                         return AddToCollectionView(collection.splashImages[index]);
                       }
-                  ).then((value) => true ? Provider.of<SplashImageViewModel>(context, listen: false).deleteCollectionImage(widget.splashCollectionIndex, index) : null);
+                  ).then((value) {
+                    if (value= true) {
+                      Provider.of<SplashImageViewModel>(context, listen: false).deleteCollectionImage(widget.splashCollectionIndex, index);
+                    }
+                  });
                 },
               );
             },

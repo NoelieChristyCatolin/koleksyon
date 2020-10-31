@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koleksyon/screens/search_view.dart';
 import 'package:koleksyon/screens/collections_view.dart';
-//import 'package:koleksyon/components/collection_list.dart';
-
 
 class Koleksyon extends StatefulWidget {
   static String id = "koleksyon";

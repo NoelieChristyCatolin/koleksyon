@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:koleksyon/service/splash_api.dart';
 import 'package:koleksyon/models/splash_image.dart';
 import 'package:koleksyon/models/splash_collection.dart';
@@ -41,9 +41,7 @@ class SplashImageViewModel extends ChangeNotifier{
   }
 
   void deleteCollection(int index){
-    print(_collections.length);
     _collections.removeAt(index);
-    print(_collections.length);
     notifyListeners();
   }
 

@@ -7,7 +7,7 @@ class CollectionTile extends StatefulWidget {
   CollectionTile({this.collection, this.onCollectionTap});
   
   @override
-  _CollectionTileState createState() => _CollectionTileState();
+  _CollectionTileState createState() => _CfluollectionTileState();
 }
 
 class _CollectionTileState extends State<CollectionTile> {
